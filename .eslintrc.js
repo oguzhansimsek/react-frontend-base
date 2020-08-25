@@ -1,22 +1,50 @@
 module.exports = {
   env: {
     browser: true,
-    es6: true,
+    es2020: true,
   },
-  extends: ['airbnb'],
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
-  },
+  extends: ['plugin:react/recommended', 'airbnb', 'prettier'],
   parserOptions: {
+    ecmaVersion: 2020,
+    sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 2018,
-    sourceType: 'module',
   },
-  plugins: ['react'],
+  plugins: ['react', 'prettier'],
   rules: {
-    'react/jsx-filename-extension': false,
+    'react/jsx-props-no-spreading': 0,
+    'arrow-body-style': 0,
+    'react/prop-types': 0,
+    'no-console': 'off',
+    'react/jsx-filename-extension': 'off',
+    'prettier/prettier': [
+      'error',
+      {
+        singleQuote: true,
+        trailingComma: 'all',
+        arrowParens: 'always',
+        printWidth: 120,
+      },
+    ],
+    'import/no-unresolved': [
+      2,
+      {
+        ignore: [
+          '^(src)',
+          '^(assets)',
+          '^(components)',
+          '^(config)',
+          '^(containers)',
+          '^(helpers)',
+          '^(pages)',
+          '^(redux-store)',
+          '^(routes)',
+          '^(services)',
+          '^(theme)',
+          '^(utils)',
+        ],
+      },
+    ],
   },
 };

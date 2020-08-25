@@ -1,9 +1,10 @@
 import React from 'react';
+import './theme/styles/app.css';
 import ReactDOM from 'react-dom';
 
-import './theme/styles/app.css';
+import AppRouter from 'routes';
 
-import AppRouter from './app.router';
+window.isAuth = false;
 
 ReactDOM.render(
   <React.StrictMode>
