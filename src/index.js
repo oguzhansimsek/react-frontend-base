@@ -10,8 +10,6 @@ import { PersistGate } from 'redux-persist/integration/react';
 
 import 'theme/styles/app.css';
 
-window.isAuth = false;
-
 const { store, persistor } = configureStore(undefined);
 
 ReactDOM.render(

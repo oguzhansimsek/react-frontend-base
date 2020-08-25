@@ -1,13 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
 
-const PrivateRoute = ({ children, ...props }) => {
-  const auth = window.isAuth;
+import containerReduxState from 'redux-store/containers/session';
+
+const PrivateRoute = ({ isLogin, children, ...props }) => {
   return (
     <Route
       {...props}
       render={({ location }) => {
-        return auth ? (
+        return isLogin ? (
           children
         ) : (
           <Redirect
@@ -22,4 +24,4 @@ const PrivateRoute = ({ children, ...props }) => {
   );
 };
 
-export default PrivateRoute;
+export default connect(...containerReduxState)(PrivateRoute);

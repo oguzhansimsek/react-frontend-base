@@ -13,9 +13,9 @@ const AppRouter = () => {
         <PublicRoute path="/login">
           <Login />
         </PublicRoute>
-        <PublicRoute path="/about">
+        <PrivateRoute path="/about">
           <About />
-        </PublicRoute>
+        </PrivateRoute>
         <PrivateRoute path="/*">
           <Home />
         </PrivateRoute>

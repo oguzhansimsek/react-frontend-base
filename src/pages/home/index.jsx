@@ -1,15 +1,21 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-import { useHistory, useLocation } from 'react-router-dom';
+import containerReduxState from 'redux-store/containers/session';
 
-function Home() {
-  const history = useHistory();
-  const location = useLocation();
+const Home = ({ logout }) => {
+  const log = () => {
+    logout();
+  };
 
-  console.log({ history });
-  console.log({ location });
+  return (
+    <div className="Home">
+      Hello World Home
+      <button type="button" onClick={log}>
+        Logout
+      </button>
+    </div>
+  );
+};
 
-  return <div className="Home">Hello World Home</div>;
-}
-
-export default Home;
+export default connect(...containerReduxState)(Home);

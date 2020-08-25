@@ -1,29 +1,32 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 
-const Login = () => {
+import containerReduxState from 'redux-store/containers/session';
+
+const Login = ({ login, isLogin }) => {
   const history = useHistory();
   const location = useLocation();
-
   const { from } = location.state || { from: { pathname: '/' } };
 
-  if (window.isAuth) {
-    window.isAuth = false;
-  }
+  const [data] = React.useState({
+    email: 'admin@admin.com',
+    password: '12345',
+  });
 
-  const login = () => {
-    window.isAuth = true;
-    history.replace(from);
-  };
+  React.useEffect(() => {
+    if (isLogin) {
+      history.replace(from);
+    }
+  }, [isLogin]);
 
   return (
     <div className="Login">
-      <button type="button" onClick={login}>
+      <button type="button" onClick={login.bind(this, data)}>
         Login
       </button>
     </div>
   );
 };
 
-export default Login;
+export default connect(...containerReduxState)(Login);

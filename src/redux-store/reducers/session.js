@@ -13,28 +13,28 @@ export default function session(state = initialState, action) {
     case Types.USER_AUTH_LOADING:
       return {
         user: null,
-        err: null,
+        error: null,
         loading: true,
         isLogin: false,
       };
     case Types.USER_AUTH_STATE:
       return {
         user: payload.data,
-        err: null,
+        error: null,
         loading: false,
         isLogin: true,
       };
     case Types.USER_AUTH_ERROR:
       return {
         user: null,
-        err: payload,
+        error: payload.error,
         loading: false,
         isLogin: false,
       };
     case Types.USER_AUTH_LOGOUT:
       return {
         user: null,
-        err: null,
+        error: null,
         loading: false,
         isLogin: false,
       };
