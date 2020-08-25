@@ -1,0 +1,19 @@
+@import '../variables/colors.css';
+@import '../variables/font-family.css';
+
+body {
+  background-color: var(--first-color);
+  margin: 0;
+  font-family: var(--font);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: var(--font-second);
+}
+
+.about2 {
+  color: green;
+}

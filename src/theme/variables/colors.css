@@ -1,0 +1,11 @@
+:root {
+  --first-color: var(--yellow);
+  --second-color: var(--blue);
+  --text-color: var(--black);
+
+  --yellow: #fdb71a;
+  --blue: #03a9f4;
+  --white: #fff;
+  --black: #000;
+  --gray: #334148;
+}
