@@ -3,13 +3,15 @@ import { connect } from 'react-redux';
 
 import containerReduxState from 'redux-store/containers/session';
 
+import styles from './styles.module.css';
+
 const Home = ({ logout }) => {
   const log = () => {
     logout();
   };
 
   return (
-    <div className="Home">
+    <div className={styles.main}>
       Hello World Home
       <button type="button" onClick={log}>
         Logout
