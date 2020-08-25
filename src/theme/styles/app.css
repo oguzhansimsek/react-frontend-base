@@ -2,10 +2,10 @@
 @import '../variables/font-family.css';
 
 body {
-  background-color: var(--first-color);
+  background-color: var(--primary-color);
   margin: 0;
-  font-family: var(--font);
-  color: var(--text-color);
+  font-family: var(--font-family);
+  color: var(--black-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
